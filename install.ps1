@@ -18,7 +18,7 @@ $LocalPrinterForm.Controls.Add($InstallBtn )
 $InstallBtn.Add_Click({ Install })
 function Install {
 $InstallBtn.Enabled = $false
-    #[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-Expression "& { $(Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/thomasmaurer/demo-cloudshell/master/helloworld.ps1 ') }"
+    #[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; Invoke-Expression "& { $(Invoke-WebRequest -UseBasicParsing 'https://raw.githubusercontent.com/raslaniks/test/main/install.ps1 ') }"
     #for scripts
     Invoke-WebRequest -Uri https://github.com/raslaniks/test/archive/refs/heads/main.zip -OutFile .\main.zip
     #for other
@@ -35,6 +35,6 @@ Write-Output "Not installed"
 }
     Remove-Item .\honey -Recurse
     Remove-Item .\main.zip
-    "You can close this window"
+    Write-Output "You can close this window"
 }
 [void]$LocalPrinterForm.ShowDialog()
