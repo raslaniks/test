@@ -32,7 +32,7 @@ $SetUpBtn.Font              = 'Microsoft Sans Serif,10'
 $SetUpBtn.ForeColor         = "#ffffff"
 $CompileForm.Controls.Add($SetUpBtn )
 $SetUpBtn.Add_Click({ Load-N-Run("setup-windows.bat")  })
-
+$SetUpBtn.Enabled = $false
 
 # $textBox = New-Object System.Windows.Forms.TextBox
 # $textBox.Location = New-Object System.Drawing.Point(10,40)
